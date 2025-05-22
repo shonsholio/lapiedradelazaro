@@ -1,7 +1,21 @@
 <%- include('partials/_header') %>
 
-  <h1>PROXIMOS SERVICIOS</h1>
-  <p><%= agenda[0] %></p>
+  <div class="text-center">
+    <br>
+    <h1>PROXIMOS SERVICIOS</h1>
+    <br>
+
+
+    <% for (x=0 ; x < agenda.length; ++ x) { %>
+      <% let data = agenda[x].split(',') %>
+      <% for (a = 0; a < data.length; ++a) { %>
+        <% let toPublish = data[a].replace(/}/g, '') %>
+        <p><%= toPublish %></p>
+      <% } %>
+      <br>
+    <% } %>
+  </div>
+
 
   
 </body>
