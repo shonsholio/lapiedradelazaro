@@ -1,6 +1,6 @@
 <%- include('partials/_header') %>
 
-  <div class="text-center">
+  <div class="text-center justify-content-center">
     <br>
     <h1>PROXIMOS SERVICIOS</h1>
     <br>
@@ -10,9 +10,9 @@
       <% let data = agenda[x].split(',') %>
       <% for (a = 0; a < data.length; ++a) { %>
         <% let toPublish = data[a].replace(/}/g, '') %>
-        <p><%= toPublish %></p>
+          <p><%= toPublish %></p>
       <% } %>
-      <br>
+      <br><p>-----------------------------------------------------------</p><br>
     <% } %>
   </div>
 

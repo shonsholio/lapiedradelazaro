@@ -17,6 +17,8 @@ app.use(express.urlencoded({ extended: true }));
 
 app.use('/', router);
 
+app.use(express.static(path.join(__dirname, './public')));
+
 //MANEJO DE ERRORES
 app.use((err, req, res, next) => {
     console.error(err.stack);

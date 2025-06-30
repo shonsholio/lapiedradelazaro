@@ -1,0 +1,3 @@
+22/05/2025
+Quedamos conectados a la hoja de calculo por medio de sheetdb
+Queda pendiente hasta ahora, poder convertir el resultado de la query, que lo retorna en string, y debe ser una lista de objetos, para manipularlos 1 a 1 y visualizarlos
