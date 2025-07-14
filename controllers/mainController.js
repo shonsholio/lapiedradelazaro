@@ -39,5 +39,8 @@ client.read({ limit: 20, offset: 0, sheet: 'showAgenda' }).then(function(data) {
 
 }
 
+controller.web = (req,res) => {
+  res.render('web')
+}
 
 export { controller }

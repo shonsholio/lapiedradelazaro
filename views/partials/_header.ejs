@@ -24,8 +24,7 @@
     }
 
     nav {
-            background-color: #333;
-            padding: 1rem;
+          background-color: #F7FAFC;
         }
 
         nav ul {
@@ -44,15 +43,43 @@
         }
 
         nav a {
-            color: white;
+            color: black;
             text-decoration: none;
             padding: 0.5rem 1rem;
             transition: background-color 0.3s;
         }
 
         nav a:hover {
-            background-color: #555;
+            background-color: #5a7482;
             border-radius: 4px;
+        }
+
+
+        @media (max-width: 768px) {
+            .image-container img {
+                min-height: 250px; /* Reduce la altura mínima en pantallas medianas */
+            }
+            .text-overlay-content h1 {
+                font-size: 1.8rem; /* Reduce el tamaño del título */
+            }
+            .text-overlay-content p {
+                font-size: 0.9rem; /* Reduce el tamaño del párrafo */
+            }
+        }
+
+        @media (max-width: 480px) {
+            .image-container img {
+                min-height: 200px; /* Reduce la altura mínima en pantallas pequeñas */
+            }
+            .text-overlay-content {
+                padding: 1rem 1.5rem; /* Reduce el padding del texto */
+            }
+            .text-overlay-content h1 {
+                font-size: 1.5rem; /* Reduce aún más el tamaño del título */
+            }
+            .text-overlay-content p {
+                font-size: 0.8rem; /* Reduce aún más el tamaño del párrafo */
+            }
         }
 
   </style>
@@ -60,4 +87,21 @@
 
 </head>
 <body>
+
+  <nav style="display: flex; align-items: center;" class="fixed-top">
+    
+    <div >
+      <a href="/" class="img-hover"><img src="logo_lpl_white-removebg.png" style="width: 25%;" alt="logo"></a>
+    </div>
+  
+    <div style="margin-right: 80px;">
+      <ul>
+        <li><a href="#nosotros" class="">Nosotros</a></li>
+        <li><a href="#" class="">Música</a></li>
+        <li><a href="#" class="">Eventos</a></li>
+        <li><a href="#" class="">Galería</a></li>
+        <li><a href="#" class="">Contacto</a></li>
+      </ul>
+    </div>
+  </nav>
   
