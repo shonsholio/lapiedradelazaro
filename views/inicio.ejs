@@ -1,22 +1,7 @@
 <%- include('partials/_header') %>
-<body class="bg-background selection:bg-secondary-fixed selection:text-on-secondary-fixed">
-<!-- TopAppBar -->
-<header class="fixed top-0 w-full z-50 bg-[#faf9f5] dark:bg-[#051125] bg-opacity-80 backdrop-blur-md flex justify-between items-center px-6 h-16 w-full">
-<div class="flex items-center gap-4">
-<span class="material-symbols-outlined text-[#051125] dark:text-[#faf9f5]">menu</span>
-<span class="text-2xl font-serif tracking-[0.2em] text-[#051125] dark:text-[#faf9f5]">S. JUAN 11, 40</span>
-</div>
-<nav class="hidden md:flex gap-8 items-center">
-<a class="font-['Noto_Serif'] font-light tracking-tight text-[#775a19] hover:text-[#775a19] transition-colors duration-300" href="#">Inicio</a>
-<a class="font-['Noto_Serif'] font-light tracking-tight text-[#051125]/70 dark:text-[#faf9f5]/70 hover:text-[#775a19] transition-colors duration-300" href="#">Musica</a>
-<a class="font-['Noto_Serif'] font-light tracking-tight text-[#051125]/70 dark:text-[#faf9f5]/70 hover:text-[#775a19] transition-colors duration-300" href="#">Fotos</a>
-<a class="font-['Noto_Serif'] font-light tracking-tight text-[#051125]/70 dark:text-[#faf9f5]/70 hover:text-[#775a19] transition-colors duration-300" href="#">Eventos</a>
-<a class="font-['Noto_Serif'] font-light tracking-tight text-[#051125]/70 dark:text-[#faf9f5]/70 hover:text-[#775a19] transition-colors duration-300" href="#">Contacto</a>
-</nav>
-<div class="w-20 h-15 rounded-full bg-surface-container-high overflow-hidden border border-outline-variant/20">
-<img alt="Logo" data-alt="Close up portrait of a serene woman with soft natural lighting and neutral colors" src="logo_lpl_white-removebg.png"/>
-</div>
-</header>
+
+
+
 <main class="pt-16 pb-24 md:pb-0">
 
 <!-- Hero Section: Lyric Overlay Pattern -->
@@ -39,7 +24,7 @@
                             Play al video
                             <span class="material-symbols-outlined text-lg group-hover:translate-x-1 transition-transform">play_arrow</span>
 </a>
-<a href="" target="_blank" rel="noopener noreferrer" class="bg-surface/10 backdrop-blur-md border border-surface/20 text-surface px-8 py-4 rounded-md font-medium tracking-wide flex items-center justify-center hover:bg-surface/20 transition-all">
+<a href="/eventos" target="_blank" rel="noopener noreferrer" class="bg-surface/10 backdrop-blur-md border border-surface/20 text-surface px-8 py-4 rounded-md font-medium tracking-wide flex items-center justify-center hover:bg-surface/20 transition-all">
 Próximas Fechas
 </a>
 </div>
@@ -82,15 +67,17 @@ Próximas Fechas
 </div>
 <!-- Song Item 1 -->
 <div class="md:col-span-1 bg-surface-container-low p-6 rounded-xl flex flex-col justify-between hover:bg-surface-container-high transition-colors cursor-pointer group">
-<div class="flex justify-between items-start">
-<span class="material-symbols-outlined text-secondary" style="font-variation-settings: 'FILL' 1;">favorite</span>
-<span class="font-label text-xs font-bold text-on-surface-variant/40">01</span>
-</div>
-<div>
-<p class="text-xs font-label uppercase tracking-widest text-secondary font-bold mb-1">La más sonada</p>
-<h3 class="text-xl font-headline text-primary group-hover:text-secondary transition-colors">Nadie Como Tú</h3>
-</div>
-</div>
+    <div class="flex justify-between items-start">
+    <span class="material-symbols-outlined text-secondary" style="font-variation-settings: 'FILL' 1;">favorite</span>
+    <span class="font-label text-xs font-bold text-on-surface-variant/40">01</span>
+    </div>
+    <div>
+    <p class="text-xs font-label uppercase tracking-widest text-secondary font-bold mb-1">La más sonada</p>
+    <a href="https://www.youtube.com/watch?v=I2pQqQrHNmE" target="_blank" rel="noopener noreferrer">
+        <h3 class="text-xl font-headline text-primary group-hover:text-secondary transition-colors">Gracias</h3>
+    </a>
+    </div>
+    </div>
 <!-- Song Item 2 -->
 <div class="md:col-span-1 bg-primary p-6 rounded-xl flex flex-col justify-between hover:bg-primary-container transition-colors cursor-pointer group">
 <div class="flex justify-between items-start">
@@ -99,7 +86,9 @@ Próximas Fechas
 </div>
 <div>
 <p class="text-xs font-label uppercase tracking-widest text-secondary-fixed-dim font-bold mb-1">Track Recomendado</p>
-<h3 class="text-xl font-headline text-surface group-hover:text-secondary-fixed-dim transition-colors">Caminaré en tu verdad</h3>
+<a href="https://www.youtube.com/watch?v=DL4fnxT5ozQ" target="_blank" rel="noopener noreferrer">
+    <h3 class="text-xl font-headline text-surface group-hover:text-secondary-fixed-dim transition-colors">Caminaré en tu verdad</h3>
+</a>
 </div>
 </div>
 <!-- Photo Item -->
@@ -193,7 +182,7 @@ Próximas Fechas
 <span class="material-symbols-outlined">collections</span>
 <span class="font-['Manrope'] text-[10px] uppercase tracking-widest font-medium mt-1">Fotos</span>
 </a>
-<a class="flex flex-col items-center justify-center text-[#051125]/40 dark:text-[#faf9f5]/40 active:scale-95 duration-200" href="#">
+<a class="flex flex-col items-center justify-center text-[#051125]/40 dark:text-[#faf9f5]/40 active:scale-95 duration-200" href="/eventos">
 <span class="material-symbols-outlined">event</span>
 <span class="font-['Manrope'] text-[10px] uppercase tracking-widest font-medium mt-1">Fechas</span>
 </a>

@@ -6,6 +6,8 @@ const app = express()
 
 router.get('/', controller.inicio)
 router.get('/agenda', controller.agenda)
+router.get('/eventos', controller.eventos)
+
 
 router.get('/web', controller.web)
 
