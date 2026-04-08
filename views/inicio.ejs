@@ -48,7 +48,7 @@ Próximas Fechas
 <h2 class="text-4xl md:text-5xl font-headline text-primary mb-6">Visión &amp; Sonido</h2>
 <p class="font-body text-on-surface-variant leading-relaxed">Un santuario de melodías consagradas. Explora nuestra selección de canciones, diseñadas para el encuentro y la contemplación.</p>
 </div>
-<a class="text-secondary font-bold font-label text-sm uppercase tracking-widest border-b-2 border-secondary/20 pb-1 hover:border-secondary transition-all" href="#">VER LISTADO COMPLETO</a>
+<a class="text-secondary font-bold font-label text-sm uppercase tracking-widest border-b-2 border-secondary/20 pb-1 hover:border-secondary transition-all" href="https://open.spotify.com/intl-es/artist/1yf6DwPpFccKmxb6qYGhao" target="_blank" rel="noopener noreferrer">VER LISTADO COMPLETO</a>
 </div>
 <div class="grid grid-cols-1 md:grid-cols-4 md:grid-rows-2 gap-6 h-auto md:h-[600px]">
 <!-- Large Feature: Video -->
@@ -92,14 +92,15 @@ Próximas Fechas
 </div>
 </div>
 <!-- Photo Item -->
-<div class="md:col-span-2 relative rounded-xl overflow-hidden group cursor-pointer shadow-sm">
-<img alt="Live Photo" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="Live band performance with atmospheric backlighting and haze, emotional and high contrast" src="super_shema.png"/>
-<div class="absolute inset-0 bg-gradient-to-r from-primary/60 to-transparent"></div>
-<div class="absolute bottom-0 left-0 p-6">
-<h3 class="text-surface font-headline text-xl" style="background-color: black; padding: 5px 5px;">Primer Mandamiento</h3>
-<p class="text-surface-variant/80 text-sm font-body" style="background-color:black; padding: 5px 5px;">Una experiencia de encuentro, música y fé.</p>
-</div>
-</div>
+ <a class="md:col-span-2 relative rounded-xl overflow-hidden group cursor-pointer shadow-sm" href="_primer_mandamiento.pdf" target="_blank" rel="noopener noreferrer">
+     <img alt="Live Photo" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="Live band performance with atmospheric backlighting and haze, emotional and high contrast" src="super_shema.png"/>
+     <div class="absolute inset-0 bg-gradient-to-r from-primary/60 to-transparent"></div>
+     <div class="absolute bottom-0 left-0 p-6">
+     <h3 class="text-surface font-headline text-xl" style="background-color: black; padding: 5px 5px;">Primer Mandamiento</h3>
+     <p class="text-surface-variant/80 text-sm font-body" style="background-color:black; padding: 5px 5px;">Una experiencia de encuentro, música y fé.</p>
+     </div>
+
+ </a>
 </div>
 </div>
 </section>
@@ -168,27 +169,5 @@ Próximas Fechas
 </div>
 </footer>
 </main>
-<!-- BottomNavBar (Mobile Only) -->
-<nav class="md:hidden fixed bottom-0 left-0 w-full flex justify-around items-center pt-3 pb-6 px-4 bg-[#faf9f5]/80 dark:bg-[#051125]/80 backdrop-blur-xl z-50 border-t border-[#051125]/5 dark:border-[#faf9f5]/5 shadow-[0_-4px_20px_rgba(5,17,37,0.03)]">
-<a class="flex flex-col items-center justify-center text-[#775a19] dark:text-[#e9c176] font-bold active:scale-95 duration-200" href="#">
-<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">home</span>
-<span class="font-['Manrope'] text-[10px] uppercase tracking-widest font-medium mt-1">Inicio</span>
-</a>
-<a class="flex flex-col items-center justify-center text-[#051125]/40 dark:text-[#faf9f5]/40 active:scale-95 duration-200" href="#">
-<span class="material-symbols-outlined">library_music</span>
-<span class="font-['Manrope'] text-[10px] uppercase tracking-widest font-medium mt-1">Música</span>
-</a>
-<a class="flex flex-col items-center justify-center text-[#051125]/40 dark:text-[#faf9f5]/40 active:scale-95 duration-200" href="#">
-<span class="material-symbols-outlined">collections</span>
-<span class="font-['Manrope'] text-[10px] uppercase tracking-widest font-medium mt-1">Fotos</span>
-</a>
-<a class="flex flex-col items-center justify-center text-[#051125]/40 dark:text-[#faf9f5]/40 active:scale-95 duration-200" href="/eventos">
-<span class="material-symbols-outlined">event</span>
-<span class="font-['Manrope'] text-[10px] uppercase tracking-widest font-medium mt-1">Fechas</span>
-</a>
-<a class="flex flex-col items-center justify-center text-[#051125]/40 dark:text-[#faf9f5]/40 active:scale-95 duration-200" href="#">
-<span class="material-symbols-outlined">info</span>
-<span class="font-['Manrope'] text-[10px] uppercase tracking-widest font-medium mt-1">Contacto</span>
-</a>
-</nav>
-</body></html>
+
+<%- include('partials/_footer') %>

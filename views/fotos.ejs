@@ -1,0 +1,71 @@
+<%- include('partials/_header') %>
+
+<main class="pt-24 pb-32 px-6 md:px-12 max-w-7xl mx-auto">
+<!-- Hero Section / Title -->
+<section class="mb-16 md:mb-24">
+<div class="flex flex-col items-start gap-2">
+<span class="font-label text-secondary text-[10px] uppercase tracking-[0.3em] font-bold">Testimonio visual</span>
+<h1 class="font-headline text-5xl md:text-7xl font-light text-primary leading-tight tracking-tight">El Destello <br/><span class="italic">de lo Divino</span></h1>
+<p class="max-w-md mt-6 text-on-surface-variant leading-relaxed">Instantes de gracia, desde el suave murmullo de lo íntimo, hasta la vibrante energía de la plegaria en comunidad.</p>
+</div>
+</section>
+<!-- Category Filter (Minimalist Ghost Tabs) -->
+<div class="flex flex-wrap gap-8 mb-16 items-center">
+<button class="font-label text-[11px] uppercase tracking-widest border-b-2 border-secondary pb-1 text-primary font-bold">All Captures</button>
+<button class="font-label text-[11px] uppercase tracking-widest border-b-2 border-transparent pb-1 text-on-surface-variant hover:text-secondary transition-colors">Performances</button>
+<button class="font-label text-[11px] uppercase tracking-widest border-b-2 border-transparent pb-1 text-on-surface-variant hover:text-secondary transition-colors">Behind the Scenes</button>
+<button class="font-label text-[11px] uppercase tracking-widest border-b-2 border-transparent pb-1 text-on-surface-variant hover:text-secondary transition-colors">Community</button>
+</div>
+
+<!-- LUISFER Grid -->
+
+<main class="max-w-8xl mx-auto px-4 py-12">
+    
+    <div class="flex flex-wrap justify-center gap-2">
+        
+        <% if (fotos && fotos.length > 0) { %>
+            <% fotos.forEach(foto => { %>
+                <div class="w-full sm:w-[calc(50%-1.5rem)] lg:w-[calc(33.333%-1.5rem)] xl:w-[calc(25%-1.5rem)]">
+
+                    <div class="group relative overflow-hidden bg-gray-100 shadow-sm transition-all duration-500 hover:shadow-xl">
+                        <img 
+                            src="/pics/<%= foto %>" 
+                            alt="Momento capturado"
+                            class="w-full h-80 object-cover transform transition-transform duration-700 ease-out group-hover:scale-110 "
+                            loading="lazy"
+                        >
+                        <div class="absolute inset-0 bg-black opacity-0 group-hover:opacity-10 transition-opacity duration-500"></div>
+                    </div>
+                </div>
+            <% }) %>
+        <% } else { %>
+            <div class="col-span-full py-20 text-center">
+                <p class="font-manrope text-gray-400 italic">No se encontraron fotografías en la carpeta.</p>
+            </div>
+        <% } %>
+
+    </div>
+</main>
+
+
+<!-- Footer Lyric Overlay Style -->
+<footer class="mt-32 relative py-32 overflow-hidden">
+<div class="absolute inset-0 z-0">
+<img alt="Background" class="w-full h-full object-cover opacity-20 filter grayscale" data-alt="Cinematic, high-grain, desaturated image of a cathedral ceiling with ethereal light beams breaking through" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCetzBTSfX5g8Cdu1bsSa6yvMDVx5QLCk4p9sp5cMCwSWeabVJGsjEsNz0QREWc-a8T2LSbAmsjqJOj47bsTK5fE01wGGfsJ21oezMzb6TAqHDCbT2LOEuNV2AI2yjryB2WqUHpdjJyqF_IgzpWCXwOrPxz3b_W1L8BDeJkV2lCIbje_sf4GdJsVtuTsCxYAEXciyOZMm_8d_4vKj4rc2NvAwLEuSN4saRpCpnS2hXfoOMsQDpPP25eVHwYt480N6izZL50NW4cI5lE"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background via-transparent to-background"></div>
+</div>
+<div class="relative z-10 text-center px-6">
+<p class="font-headline text-3xl md:text-5xl italic text-primary-container max-w-4xl mx-auto leading-tight">
+                "Where words fail, images speak the language of the eternal soul."
+            </p>
+<div class="mt-12 flex justify-center gap-8">
+<a class="text-on-surface-variant hover:text-secondary transition-colors" href="#"><span class="material-symbols-outlined" data-icon="camera">camera</span></a>
+<a class="text-on-surface-variant hover:text-secondary transition-colors" href="#"><span class="material-symbols-outlined" data-icon="mail">mail</span></a>
+<a class="text-on-surface-variant hover:text-secondary transition-colors" href="#"><span class="material-symbols-outlined" data-icon="share">share</span></a>
+</div>
+<p class="mt-16 font-label text-[9px] uppercase tracking-[0.4em] text-on-surface-variant/50">SOLIS MUSIC GROUP © 2024</p>
+</div>
+</footer>
+</body></html>
+
+<%- include('partials/_footer') %>

@@ -5,11 +5,11 @@ import { controller } from '../controllers/mainController.js';
 const app = express()
 
 router.get('/', controller.inicio)
-router.get('/agenda', controller.agenda)
+
+router.get('/fotos', controller.fotos)
+
 router.get('/eventos', controller.eventos)
-
-
-router.get('/web', controller.web)
+router.get('/nosotros', controller.nos)
 
 
 
