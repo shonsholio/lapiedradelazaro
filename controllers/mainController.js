@@ -5,7 +5,7 @@ import { existsSync } from 'fs';
 import path from 'path';
 
 const __dirname = process.cwd()
-
+import servicios from '../public/data/agenda.json' with { type: 'json' };
 
 controller.inicio = (req,res) => {
   res.render('inicio')
@@ -13,7 +13,23 @@ controller.inicio = (req,res) => {
 
 
 controller.eventos = (req,res) => {
-  res.render('eventos')
+
+  const hoy = new Date();
+  
+  const proximos = []
+
+  servicios.forEach(ind => {
+    const comp = new Date (ind.fesha)
+    if ((comp > hoy) || (comp == hoy)) {
+      proximos.push(ind)
+    } else {
+      console.log(ind.donde, "ya paso, fue el ", ind.fesha, " y hoy es ", hoy)
+    }
+  });
+
+  res.render('eventos', {
+    servicios: proximos
+  })
 }
 
 controller.nos = (req,res) => {

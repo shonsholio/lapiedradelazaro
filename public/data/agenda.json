@@ -1,0 +1,35 @@
+[
+    {
+    "fesha": "2026-05-05",
+    "mes": "Mayo",
+    "dia": "05",
+    "cae": "lunes",
+    "titulo": "Qué te mande a hacer ?",
+    "donde": "Emaús San Judas Tadeo",
+    "hora": "7:00 PM",
+    "banner": "Más Info",
+    "cuerpo": "Un espacio pensado con el fin de entender las diferentes temporadas de la vida, la importancia de dejar ir aquello que ya cumplió su propósito y cómo retomar nuestro llamado original cuando nos sentimos perdidos o frustrados."
+  },
+  {
+    "fesha": "2026-05-21",
+    "mes": "Mayo",
+    "dia": "21",
+    "cae": "jueves",
+    "titulo": "Adoración, alabanza y prédica",
+    "donde": "Sabanalarga - P. San Antonio de Padua",
+    "hora": "7:00 PM",
+    "banner": "Tickets",
+    "cuerpo": "Juntos vamos a adorar y a alabar al Señor, en un momento de alegría y comunidad. Será una noche llena de cantos, música y la palabra de Dios."
+  },
+  {
+    "fesha": "2026-05-24",
+    "mes": "Mayo",
+    "dia": "24",
+    "cae": "domingo",
+    "titulo": "Fiesta de Pentecostés",
+    "donde": "Parroquia Espíritu Santo",
+    "hora": "10:00 AM",
+    "banner": "Registro",
+    "cuerpo": "Acompañaremos a la comunidad de la Parroquia Espíritu Santo, en su eucaristía dominical, con motivo de la celebración de la fiesta de Pentecostés. Acompáñanos tu también !"
+  }
+]
