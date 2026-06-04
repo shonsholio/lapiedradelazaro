@@ -22,7 +22,7 @@ controller.inicio = (req,res) => {
 
 
 controller.eventos = async (req, res) => {
-  try {
+
 try {
     let authConfig;
 
