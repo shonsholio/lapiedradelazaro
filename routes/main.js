@@ -8,7 +8,7 @@ router.get('/', controller.inicio)
 
 router.get('/fotos', controller.fotos)
 
-router.get('/eventos', controller.eventos)
+router.get('/agenda', controller.eventos)
 router.get('/nosotros', controller.nos)
 
 

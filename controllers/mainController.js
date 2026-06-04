@@ -1,36 +1,75 @@
 const controller = {}
 
+import { sheets_v4 } from '@googleapis/sheets';
+import { GoogleAuth } from 'google-auth-library';
 import fs from 'fs/promises';
 import { existsSync } from 'fs';
 import path from 'path';
+import { fileURLToPath } from 'url';
 
-const __dirname = process.cwd()
+
+const __filename = fileURLToPath(import.meta.url);
+// const __dirname = process.cwd()
+const __dirname = path.dirname(__filename);
 import servicios from '../public/data/agenda.json' with { type: 'json' };
+
+const SPREADSHEET_ID = '1efrlnzEJ707W796uoMGMFCqrPydtdizIUhBVOey4dfA'; 
+const RANGE = 'eventos!A:I';
 
 controller.inicio = (req,res) => {
   res.render('inicio')
 }
 
 
-controller.eventos = (req,res) => {
+controller.eventos = async (req, res) => {
+  try {
+    // 3. Autenticación con Google
+    const auth = new GoogleAuth({
+      keyFile: path.join(__dirname, '../credentials.json'), 
+      scopes: ['https://www.googleapis.com/auth/spreadsheets.readonly'],
+    });
 
-  const hoy = new Date();
-  
-  const proximos = []
+    const sheets = new sheets_v4.Sheets({ auth });
 
-  servicios.forEach(ind => {
-    const comp = new Date (ind.fesha)
-    if ((comp > hoy) || (comp == hoy)) {
-      proximos.push(ind)
-    } else {
-      console.log(ind.donde, "ya paso, fue el ", ind.fesha, " y hoy es ", hoy)
+    // 4. Pedir los datos a la hoja de cálculo
+    const respuesta = await sheets.spreadsheets.values.get({
+      spreadsheetId: SPREADSHEET_ID,
+      range: RANGE,
+    });
+
+    const filas = respuesta.data.values;
+
+    // Si está vacía la hoja, respondemos con un array vacío de una vez
+    if (!filas || filas.length === 0) {
+      return res.json([]);
     }
-  });
 
-  res.render('eventos', {
-    servicios: proximos
+    // 5. Procesamos y formateamos las filas a JSON
+    const [cabeceras, ...filasDeDatos] = filas;
+
+    const listaEventos = filasDeDatos.map(fila => {
+      const objeto = {};
+      cabeceras.forEach((cabecera, indice) => {
+        objeto[cabecera] = fila[indice] ?? ""; 
+      });
+      return objeto;
+    });
+
+    // 6. RESPUESTA: Enviamos los datos al frontend o vista
+    // Si usas una API que devuelve JSON:
+    res.render('eventos', {
+    servicios: listaEventos
   })
-}
+    // return res.json(listaEventos);
+    
+    // Si vas a renderizar una vista de EJS/Pug (descomenta la línea de abajo y comenta el res.json):
+    // return res.render('eventos', { eventos: listaEventos });
+
+  } catch (error) {
+    console.error('Error en el controlador de eventos (Sheets):', error);
+    return res.status(500).json({ error: 'Error al cargar los eventos' });
+  }
+};
 
 controller.nos = (req,res) => {
   res.render('nosotros')
@@ -67,6 +106,25 @@ controller.fotos = async (req,res) => {
         res.status(500).render('fotos', { fotos: [] });
     }
 };
+
+  // SE INCLUYERON LAS CREDENCIALES DE GOOGLE CONSOLE, SOLO FALTA EL CODIGO JS EN ES6 PARA LLAMAR DESDE EL GOOGLE SHEETS
+
+  // const hoy = new Date();
+  
+  // const proximos = []
+
+  // servicios.forEach(ind => {
+  //   const comp = new Date (ind.fesha)
+  //   if ((comp > hoy) || (comp == hoy)) {
+  //     proximos.push(ind)
+  //   } else {
+  //     console.log(ind.donde, "ya paso, fue el ", ind.fesha, " y hoy es ", hoy)
+  //   }
+  // });
+
+  // res.render('eventos', {
+  //   servicios: proximos
+  // })
 
 
 export { controller }
