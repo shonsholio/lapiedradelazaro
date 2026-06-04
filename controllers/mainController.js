@@ -23,12 +23,32 @@ controller.inicio = (req,res) => {
 
 controller.eventos = async (req, res) => {
   try {
-    // 3. Autenticación con Google
-    const auth = new GoogleAuth({
-      keyFile: path.join(__dirname, '../credentials.json'), 
-      scopes: ['https://www.googleapis.com/auth/spreadsheets.readonly'],
-    });
+try {
+    let authConfig;
 
+    // Detectamos si estamos en producción (Vercel) o si la variable existe
+    if (process.env.VERCEL === '1' || process.env.GOOGLE_CREDENTIALS) {
+      
+      // Verificación de seguridad en la consola de Vercel
+      if (!process.env.GOOGLE_CREDENTIALS) {
+        throw new Error("La variable GOOGLE_CREDENTIALS no está configurada en Vercel.");
+      }
+
+      authConfig = {
+        credentials: JSON.parse(process.env.GOOGLE_CREDENTIALS.trim()),
+        scopes: ['https://www.googleapis.com/auth/spreadsheets.readonly'],
+      };
+      
+    } else {
+      // Si estamos en tu iMac local, usamos el archivo credentials.json sin problemas
+      authConfig = {
+        keyFile: path.join(__dirname, '../credentials.json'), 
+        scopes: ['https://www.googleapis.com/auth/spreadsheets.readonly'],
+      };
+    }
+
+    // 3. Autenticación con Google
+    const auth = new GoogleAuth(authConfig);
     const sheets = new sheets_v4.Sheets({ auth });
 
     // 4. Pedir los datos a la hoja de cálculo
